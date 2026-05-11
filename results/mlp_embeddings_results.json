@@ -1,0 +1,60 @@
+{
+    "model_name": "MLP with Embeddings",
+    "test_loss": 1.0112969122071565,
+    "test_accuracy": 0.7536558968080765,
+    "test_macro_f1": 0.33149604952556944,
+    "test_weighted_f1": 0.6856188625026138,
+    "best_val_macro_f1": 0.34682188065289116,
+    "total_training_time_seconds": 1480.1148405075073,
+    "num_epochs": 15,
+    "batch_size": 4096,
+    "optimizer": "AdamW",
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "loss_function": "CrossEntropyLoss with softened class weights",
+    "architecture": {
+        "embedding_dims": [
+            [
+                15,
+                7
+            ],
+            [
+                350,
+                50
+            ],
+            [
+                53,
+                26
+            ],
+            [
+                350,
+                50
+            ],
+            [
+                53,
+                26
+            ],
+            [
+                6688,
+                50
+            ],
+            [
+                20,
+                10
+            ],
+            [
+                20,
+                10
+            ]
+        ],
+        "hidden_dims": [
+            256,
+            128,
+            64
+        ],
+        "dropout": 0.3,
+        "num_numeric_features": 12,
+        "num_categorical_features": 8,
+        "num_classes": 3
+    }
+}

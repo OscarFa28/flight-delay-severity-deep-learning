@@ -1,0 +1,63 @@
+{
+    "model_name": "Wide & Deep Neural Network",
+    "test_loss": 1.0411195801528677,
+    "test_accuracy": 0.6976872305317506,
+    "test_macro_f1": 0.37650709379573505,
+    "test_weighted_f1": 0.680624208490369,
+    "best_val_macro_f1": 0.3963337859425087,
+    "total_training_time_seconds": 1504.2191035747528,
+    "num_epochs": 15,
+    "batch_size": 4096,
+    "optimizer": "AdamW",
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "loss_function": "CrossEntropyLoss with controlled class weights",
+    "architecture": {
+        "embedding_dims": [
+            [
+                15,
+                7
+            ],
+            [
+                350,
+                50
+            ],
+            [
+                53,
+                26
+            ],
+            [
+                350,
+                50
+            ],
+            [
+                53,
+                26
+            ],
+            [
+                6688,
+                50
+            ],
+            [
+                20,
+                10
+            ],
+            [
+                20,
+                10
+            ]
+        ],
+        "deep_hidden_dims": [
+            384,
+            192,
+            96
+        ],
+        "dropout": 0.25,
+        "num_numeric_features": 12,
+        "num_categorical_features": 8,
+        "num_classes": 3,
+        "wide_path": "Linear layer over numerical features",
+        "deep_path": "Categorical embeddings + numerical features through MLP",
+        "final_combination": "wide_logits + deep_logits"
+    }
+}

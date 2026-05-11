@@ -1,0 +1,4 @@
+dataset,rows,columns,file_path
+Raw unified dataset,6981533,33,c:\Users\of_de\Documents\ESCUELA\UP\8vo Semestre\Deep_learning\proyecto_vuelos\data\generated\flights_2025_raw.parquet
+Clean full dataset,6857418,42,c:\Users\of_de\Documents\ESCUELA\UP\8vo Semestre\Deep_learning\proyecto_vuelos\data\generated\flights_2025_clean_full.parquet
+Model base dataset,6857418,24,c:\Users\of_de\Documents\ESCUELA\UP\8vo Semestre\Deep_learning\proyecto_vuelos\data\generated\flights_2025_model_base.parquet

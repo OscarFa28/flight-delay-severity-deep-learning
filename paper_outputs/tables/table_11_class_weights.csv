@@ -1,0 +1,4 @@
+class_id,class_name,raw_class_weight
+0,On time,0.42201697768504637
+1,Delay,2.0752190993891233
+2,Long delay,6.731728574447502

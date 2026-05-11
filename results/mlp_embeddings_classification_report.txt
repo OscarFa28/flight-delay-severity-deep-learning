@@ -1,0 +1,9 @@
+              precision    recall  f1-score   support
+
+     On time       0.78      0.96      0.86    867712
+       Delay       0.29      0.09      0.13    197309
+  Long delay       0.24      0.00      0.00     62199
+
+    accuracy                           0.75   1127220
+   macro avg       0.44      0.35      0.33   1127220
+weighted avg       0.66      0.75      0.69   1127220

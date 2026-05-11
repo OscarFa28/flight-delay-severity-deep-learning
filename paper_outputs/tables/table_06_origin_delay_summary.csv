@@ -1,0 +1,235 @@
+ORIGIN,ORIGIN_CITY_NAME,ORIGIN_STATE_ABR,num_flights,avg_delay_minutes,delayed_percentage
+ROA,"Roanoke, VA",VA,1781,36.15,29.03
+ASE,"Aspen, CO",CO,7228,33.09,32.07
+MGM,"Montgomery, AL",AL,2020,32.06,27.03
+ACK,"Nantucket, MA",MA,1381,30.36,32.51
+BTV,"Burlington, VT",VT,6347,28.88,25.3
+CHO,"Charlottesville, VA",VA,1432,28.38,26.75
+TVC,"Traverse City, MI",MI,4973,27.85,28.8
+LCK,"Columbus, OH",OH,1117,27.62,28.65
+CAK,"Akron, OH",OH,4116,27.52,24.22
+GUC,"Gunnison, CO",CO,1129,27.35,24.36
+LAW,"Lawton/Fort Sill, OK",OK,1034,27.02,23.31
+JAC,"Jackson, WY",WY,6223,26.97,25.44
+RST,"Rochester, MN",MN,1005,26.83,29.55
+PIA,"Peoria, IL",IL,5270,26.59,24.88
+MBS,"Saginaw/Bay City/Midland, MI",MI,2261,26.32,22.78
+EGE,"Eagle, CO",CO,3780,25.94,30.29
+MLU,"Monroe, LA",LA,1048,25.86,20.42
+SBN,"South Bend, IN",IN,7731,25.41,24.81
+MTJ,"Montrose/Delta, CO",CO,2395,25.3,22.76
+BGR,"Bangor, ME",ME,3666,25.29,24.93
+LCH,"Lake Charles, LA",LA,1137,25.26,22.52
+BLV,"Belleville, IL",IL,1297,25.23,29.07
+FWA,"Fort Wayne, IN",IN,6475,25.17,25.75
+CRW,"Charleston/Dunbar, WV",WV,2805,24.8,24.14
+ACV,"Arcata/Eureka, CA",CA,1941,24.33,22.51
+MQT,"Marquette, MI",MI,1292,24.25,22.14
+SFB,"Sanford, FL",FL,10205,24.15,29.6
+XWA,"Williston, ND",ND,2324,24.06,22.93
+HDN,"Hayden, CO",CO,2262,24.04,25.24
+CHA,"Chattanooga, TN",TN,5090,23.68,22.63
+TYS,"Knoxville, TN",TN,12906,23.36,23.11
+FLG,"Flagstaff, AZ",AZ,1726,23.26,19.41
+FNT,"Flint, MI",MI,3260,23.25,24.88
+LNK,"Lincoln, NE",NE,2801,22.7,22.63
+DLH,"Duluth, MN",MN,2201,22.56,19.76
+FSD,"Sioux Falls, SD",SD,7236,22.53,24.86
+SHV,"Shreveport, LA",LA,5794,22.45,21.11
+LAN,"Lansing, MI",MI,1884,22.33,22.61
+SGF,"Springfield, MO",MO,8984,22.26,24.33
+LFT,"Lafayette, LA",LA,2575,22.23,22.37
+DCA,"Washington, DC",VA,136411,22.12,26.26
+COU,"Columbia, MO",MO,2450,22.05,24.61
+HSV,"Huntsville, AL",AL,8308,21.99,22.76
+BIS,"Bismarck/Mandan, ND",ND,4200,21.92,21.48
+EVV,"Evansville, IN",IN,1877,21.83,22.27
+SJT,"San Angelo, TX",TX,1037,21.83,20.44
+ACT,"Waco, TX",TX,1037,21.82,19.48
+DAY,"Dayton, OH",OH,7647,21.76,20.41
+PHL,"Philadelphia, PA",PA,94503,21.74,24.93
+LGA,"New York, NY",NY,131067,21.67,25.55
+MFE,"Mission/McAllen/Edinburg, TX",TX,4750,21.63,19.09
+MLI,"Moline, IL",IL,4094,21.47,22.28
+EWR,"Newark, NJ",NJ,117433,21.47,24.63
+PBI,"West Palm Beach/Palm Beach, FL",FL,29977,21.47,23.94
+HPN,"White Plains, NY",NY,10415,21.18,22.43
+RDD,"Redding, CA",CA,1624,21.11,18.78
+ORD,"Chicago, IL",IL,320154,21.05,25.76
+DFW,"Dallas/Fort Worth, TX",TX,305587,21.02,26.75
+CID,"Cedar Rapids/Iowa City, IA",IA,7860,20.98,21.83
+BTR,"Baton Rouge, LA",LA,4413,20.89,19.22
+CPR,"Casper, WY",WY,2362,20.71,22.95
+IDA,"Idaho Falls, ID",ID,4334,20.71,19.77
+SYR,"Syracuse, NY",NY,10099,20.7,23.26
+AVL,"Asheville, NC",NC,10014,20.46,22.73
+PVU,"Provo, UT",UT,2892,20.44,18.02
+ATW,"Appleton, WI",WI,7249,20.32,22.25
+EYW,"Key West, FL",FL,7549,20.32,22.78
+PNS,"Pensacola, FL",FL,13397,20.24,17.72
+FAR,"Fargo, ND",ND,6893,20.14,21.59
+ICT,"Wichita, KS",KS,10869,20.02,20.15
+AGS,"Augusta, GA",GA,2228,19.95,21.41
+SBP,"San Luis Obispo, CA",CA,5247,19.93,20.87
+DRO,"Durango, CO",CO,4088,19.9,21.53
+XNA,"Fayetteville, AR",AR,12525,19.88,20.91
+MIA,"Miami, FL",FL,109148,19.87,24.99
+CLL,"College Station/Bryan, TX",TX,1182,19.84,18.7
+PWM,"Portland, ME",ME,10445,19.82,20.65
+MDT,"Harrisburg, PA",PA,4923,19.77,20.43
+MYR,"Myrtle Beach, SC",SC,13820,19.76,20.43
+AEX,"Alexandria, LA",LA,1040,19.72,22.21
+GRB,"Green Bay, WI",WI,4066,19.69,21.45
+SAV,"Savannah, GA",GA,18753,19.63,20.28
+MSN,"Madison, WI",WI,12505,19.57,19.57
+ROC,"Rochester, NY",NY,9853,19.55,22.27
+JFK,"New York, NY",NY,101905,19.48,24.05
+ALB,"Albany, NY",NY,12218,19.46,20.94
+TRI,"Bristol/Johnson City/Kingsport, TN",TN,1325,19.36,21.81
+MHK,"Manhattan/Ft. Riley, KS",KS,1496,19.33,18.45
+BOS,"Boston, MA",MA,139366,19.24,24.31
+ISP,"Islip, NY",NY,5161,19.23,22.53
+TTN,"Trenton, NJ",NJ,1022,19.08,20.45
+RAP,"Rapid City, SD",SD,5089,19.03,22.09
+STX,"Christiansted, VI",VI,1296,18.94,21.3
+LIT,"Little Rock, AR",AR,12510,18.89,21.24
+STS,"Santa Rosa, CA",CA,4601,18.85,23.52
+TYR,"Tyler, TX",TX,1044,18.82,24.23
+BZN,"Bozeman, MT",MT,10903,18.75,20.55
+MOB,"Mobile, AL",AL,1663,18.73,19.36
+CMI,"Champaign/Urbana, IL",IL,1589,18.72,19.7
+CHS,"Charleston, SC",SC,23868,18.72,20.42
+DSM,"Des Moines, IA",IA,14299,18.7,19.21
+FLL,"Fort Lauderdale, FL",FL,85633,18.68,22.87
+MHT,"Manchester, NH",NH,5795,18.64,20.35
+GRR,"Grand Rapids, MI",MI,18196,18.55,21.66
+SAF,"Santa Fe, NM",NM,3607,18.53,22.35
+ORF,"Norfolk, VA",VA,19364,18.52,20.63
+CVG,"Cincinnati, OH",KY,32590,18.44,21.12
+MCO,"Orlando, FL",FL,156745,18.38,22.89
+CAE,"Columbia, SC",SC,5388,18.38,19.19
+AZO,"Kalamazoo, MI",MI,1575,18.26,18.1
+MOT,"Minot, ND",ND,2811,18.22,19.39
+JAX,"Jacksonville, FL",FL,27597,18.07,19.57
+HLN,"Helena, MT",MT,1653,18.04,18.09
+SRQ,"Sarasota/Bradenton, FL",FL,16826,17.99,18.84
+RIC,"Richmond, VA",VA,17435,17.99,21.49
+COS,"Colorado Springs, CO",CO,13150,17.93,21.1
+RSW,"Fort Myers, FL",FL,34500,17.9,20.01
+PVD,"Providence, RI",RI,15098,17.88,20.83
+LRD,"Laredo, TX",TX,1695,17.84,18.94
+IAH,"Houston, TX",TX,115444,17.84,21.0
+BRO,"Brownsville, TX",TX,1507,17.83,19.31
+DEN,"Denver, CO",CO,313954,17.72,24.21
+BUF,"Buffalo, NY",NY,20152,17.69,20.58
+RDU,"Raleigh/Durham, NC",NC,54162,17.67,20.0
+JAN,"Jackson/Vicksburg, MS",MS,5991,17.61,17.44
+MSO,"Missoula, MT",MT,4327,17.58,19.69
+LBB,"Lubbock, TX",TX,6430,17.57,17.81
+LEX,"Lexington, KY",KY,9151,17.52,20.84
+MKE,"Milwaukee, WI",WI,27067,17.47,19.99
+SUN,"Sun Valley/Hailey/Ketchum, ID",ID,2467,17.32,14.19
+BDL,"Hartford, CT",CT,22437,17.29,20.33
+ILM,"Wilmington, NC",NC,7155,17.26,18.77
+CLT,"Charlotte, NC",NC,191408,17.24,23.08
+PIE,"St. Petersburg, FL",FL,9111,17.24,23.14
+TPA,"Tampa, FL",FL,77767,17.24,21.0
+BIL,"Billings, MT",MT,4778,17.12,17.35
+DTW,"Detroit, MI",MI,120412,17.1,20.99
+VPS,"Valparaiso, FL",FL,10243,17.1,17.2
+IAD,"Washington, DC",VA,56319,17.06,20.09
+GSO,"Greensboro/High Point, NC",NC,10179,17.04,17.27
+AUS,"Austin, TX",TX,85544,16.98,21.19
+AVP,"Scranton/Wilkes-Barre, PA",PA,1490,16.98,18.39
+SJU,"San Juan, PR",PR,34455,16.96,20.19
+STT,"Charlotte Amalie, VI",VI,4778,16.93,16.56
+BMI,"Bloomington/Normal, IL",IL,1694,16.91,18.6
+FCA,"Kalispell, MT",MT,4281,16.77,17.57
+YUM,"Yuma, AZ",AZ,1669,16.74,14.56
+CLE,"Cleveland, OH",OH,38952,16.72,19.5
+MSY,"New Orleans, LA",LA,49948,16.6,20.09
+ATL,"Atlanta, GA",GA,308837,16.52,22.19
+SDF,"Louisville, KY",KY,22461,16.5,18.29
+ELM,"Elmira/Corning, NY",NY,1238,16.47,19.22
+GSP,"Greer, SC",SC,13876,16.42,18.12
+BWI,"Baltimore, MD",MD,94312,16.39,21.59
+MLB,"Melbourne, FL",FL,2893,16.36,16.49
+BNA,"Nashville, TN",TN,103351,16.33,21.38
+AMA,"Amarillo, TX",TX,5081,16.3,18.09
+BFL,"Bakersfield, CA",CA,3014,16.3,16.03
+TUL,"Tulsa, OK",OK,18057,16.29,18.35
+GJT,"Grand Junction, CO",CO,4640,16.19,18.25
+TLH,"Tallahassee, FL",FL,4367,16.11,16.46
+OKC,"Oklahoma City, OK",OK,23757,16.07,18.72
+MCI,"Kansas City, MO",MO,47172,16.06,19.88
+MEM,"Memphis, TN",TN,23486,16.03,18.54
+ECP,"Panama City, FL",FL,8719,15.93,17.78
+HHH,"Hilton Head, SC",SC,2056,15.78,17.7
+CMH,"Columbus, OH",OH,43583,15.73,19.79
+BHM,"Birmingham, AL",AL,16452,15.68,17.78
+ABE,"Allentown/Bethlehem/Easton, PA",PA,2956,15.67,16.14
+IND,"Indianapolis, IN",IN,46362,15.56,18.85
+OMA,"Omaha, NE",NE,24193,15.55,17.93
+MAF,"Midland/Odessa, TX",TX,9726,15.55,16.33
+STL,"St. Louis, MO",MO,63064,15.39,20.28
+MSP,"Minneapolis, MN",MN,111116,15.33,19.62
+FAT,"Fresno, CA",CA,13145,14.85,17.35
+DAL,"Dallas, TX",TX,70096,14.82,22.3
+SAN,"San Diego, CA",CA,95102,14.79,20.69
+PIT,"Pittsburgh, PA",PA,42382,14.68,18.43
+SBA,"Santa Barbara, CA",CA,8091,14.6,18.12
+GNV,"Gainesville, FL",FL,2624,14.58,13.0
+PGD,"Punta Gorda, FL",FL,7554,14.58,19.33
+MRY,"Monterey, CA",CA,4790,14.55,15.11
+PSP,"Palm Springs, CA",CA,14827,14.39,17.99
+SNA,"Santa Ana, CA",CA,44291,14.36,17.72
+SFO,"San Francisco, CA",CA,142506,14.26,19.27
+LAS,"Las Vegas, NV",NV,181299,14.17,20.27
+MDW,"Chicago, IL",IL,73073,14.09,21.28
+CRP,"Corpus Christi, TX",TX,3852,13.95,16.95
+RNO,"Reno, NV",NV,20462,13.89,17.41
+PAE,"Everett, WA",WA,1049,13.83,16.11
+EUG,"Eugene, OR",OR,8208,13.81,15.64
+SAT,"San Antonio, TX",TX,41143,13.66,16.69
+BQN,"Aguadilla, PR",PR,2159,13.64,17.37
+GPT,"Gulfport/Biloxi, MS",MS,3245,13.54,13.78
+ELP,"El Paso, TX",TX,16738,13.43,16.61
+PHX,"Phoenix, AZ",AZ,194219,13.41,18.83
+LAX,"Los Angeles, CA",CA,187805,13.19,16.87
+ABI,"Abilene, TX",TX,1713,13.14,16.87
+GRK,"Killeen, TX",TX,1736,13.1,19.01
+DAB,"Daytona Beach, FL",FL,2992,13.06,14.07
+MFR,"Medford, OR",OR,4550,12.96,14.04
+SEA,"Seattle, WA",WA,162352,12.91,20.69
+TUS,"Tucson, AZ",AZ,19859,12.83,14.64
+ABQ,"Albuquerque, NM",NM,24858,12.8,16.05
+ONT,"Ontario, CA",CA,25847,12.72,16.14
+RDM,"Bend/Redmond, OR",OR,6109,12.57,16.16
+HRL,"Harlingen/San Benito, TX",TX,4178,12.55,16.04
+HOU,"Houston, TX",TX,54519,12.38,19.29
+KTN,"Ketchikan, AK",AK,2313,12.34,17.55
+SGU,"St. George, UT",UT,4512,12.14,13.43
+BUR,"Burbank, CA",CA,30086,12.04,16.19
+FSM,"Fort Smith, AR",AR,1139,11.67,16.15
+PDX,"Portland, OR",OR,60353,11.5,16.82
+BOI,"Boise, ID",ID,23335,11.32,15.26
+GEG,"Spokane, WA",WA,18040,11.14,15.21
+SLC,"Salt Lake City, UT",UT,115090,11.04,15.14
+SMF,"Sacramento, CA",CA,57309,10.93,16.37
+JNU,"Juneau, AK",AK,4555,10.89,14.88
+ANC,"Anchorage, AK",AK,18256,10.74,15.04
+GTF,"Great Falls, MT",MT,2410,10.63,11.78
+ACY,"Atlantic City, NJ",NJ,2660,10.57,12.93
+SIT,"Sitka, AK",AK,1277,10.44,15.74
+FAI,"Fairbanks, AK",AK,3690,10.35,15.28
+AZA,"Phoenix, AZ",AZ,6414,10.31,14.87
+OAK,"Oakland, CA",CA,34155,10.04,16.38
+PSC,"Pasco/Kennewick/Richland, WA",WA,6334,9.9,11.08
+SJC,"San Jose, CA",CA,45474,9.84,15.14
+OGG,"Kahului, HI",HI,25170,9.67,13.31
+BLI,"Bellingham, WA",WA,2371,9.55,13.33
+HNL,"Honolulu, HI",HI,58056,9.26,13.37
+KOA,"Kona, HI",HI,15557,9.11,11.56
+LGB,"Long Beach, CA",CA,16630,8.69,13.19
+LIH,"Lihue, HI",HI,15420,8.52,12.73
+ITO,"Hilo, HI",HI,6600,5.84,9.83

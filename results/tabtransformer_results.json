@@ -1,0 +1,53 @@
+{
+    "model_name": "TabTransformer / FT-Transformer Style",
+    "best_val_macro_f1_raw": 0.4014662829577729,
+    "raw_test_metrics": {
+        "accuracy": 0.6820345629069747,
+        "balanced_accuracy": 0.3808604725832548,
+        "macro_f1": 0.3770807753564063,
+        "weighted_f1": 0.6737619766363303
+    },
+    "calibrated_validation_metrics": {
+        "accuracy": 0.7130957328324218,
+        "balanced_accuracy": 0.4089853152914628,
+        "macro_f1": 0.4060411555374952,
+        "weighted_f1": 0.7192188618960474
+    },
+    "calibrated_test_metrics": {
+        "accuracy": 0.6938716488351875,
+        "balanced_accuracy": 0.38622215217275385,
+        "macro_f1": 0.3905454865950229,
+        "weighted_f1": 0.6800728318099504
+    },
+    "best_multipliers": [
+        1.0,
+        0.9500000000000001,
+        1.1428571428571428
+    ],
+    "total_training_time_seconds": 1373.4016268253326,
+    "num_epochs_trained": 7,
+    "batch_size": 4096,
+    "optimizer": "AdamW",
+    "scheduler": "OneCycleLR",
+    "learning_rate": 0.0008,
+    "weight_decay": 0.0002,
+    "loss_function": "CrossEntropyLoss with class weights and label smoothing",
+    "uses_amp": true,
+    "architecture": {
+        "d_model": 64,
+        "n_heads": 4,
+        "n_layers": 3,
+        "ff_dim": 256,
+        "transformer_dropout": 0.15,
+        "head_hidden_dims": [
+            256,
+            128
+        ],
+        "head_dropout": 0.25,
+        "num_numeric_features": 12,
+        "num_categorical_features": 8,
+        "num_classes": 3,
+        "token_strategy": "categorical tokens + numerical tokens + CLS token",
+        "calibration_strategy": "validation-tuned class probability multipliers"
+    }
+}

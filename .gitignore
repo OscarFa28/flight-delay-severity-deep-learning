@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+.env/
+.venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# VS Code
+.vscode/
+
+# Environment variables
+.env
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Model checkpoints
+*.pt
+*.pth
+*.h5
+*.ckpt
+
+# TensorBoard
+runs/
+
+# Build files
+build/
+dist/
+
+# Ignore ALL contents inside data folder
+data/
+

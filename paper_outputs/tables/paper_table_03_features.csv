@@ -1,0 +1,3 @@
+feature_type,num_features,features
+Categorical,8,"OP_UNIQUE_CARRIER, ORIGIN, ORIGIN_STATE_ABR, DEST, DEST_STATE_ABR, ROUTE, DEP_TIME_BLK, ARR_TIME_BLK"
+Numerical,12,"DISTANCE, CRS_DEP_MINUTES_OF_DAY, CRS_ARR_MINUTES_OF_DAY, dep_time_sin, dep_time_cos, arr_time_sin, arr_time_cos, month_sin, month_cos, day_of_week_sin, day_of_week_cos, is_weekend"
