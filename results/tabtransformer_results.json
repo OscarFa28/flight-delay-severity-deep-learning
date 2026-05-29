@@ -1,53 +1,54 @@
 {
     "model_name": "TabTransformer / FT-Transformer Style",
-    "best_val_macro_f1_raw": 0.4014662829577729,
+    "best_val_macro_f1_raw": 0.43139953125074765,
     "raw_test_metrics": {
-        "accuracy": 0.6820345629069747,
-        "balanced_accuracy": 0.3808604725832548,
-        "macro_f1": 0.3770807753564063,
-        "weighted_f1": 0.6737619766363303
+        "accuracy": 0.7343628570984488,
+        "balanced_accuracy": 0.42590774624485195,
+        "macro_f1": 0.4309429911984865,
+        "weighted_f1": 0.7283928249357083
     },
     "calibrated_validation_metrics": {
-        "accuracy": 0.7130957328324218,
-        "balanced_accuracy": 0.4089853152914628,
-        "macro_f1": 0.4060411555374952,
-        "weighted_f1": 0.7192188618960474
+        "accuracy": 0.7057670381963996,
+        "balanced_accuracy": 0.44280159887388465,
+        "macro_f1": 0.4349912732186487,
+        "weighted_f1": 0.715484206583193
     },
     "calibrated_test_metrics": {
-        "accuracy": 0.6938716488351875,
-        "balanced_accuracy": 0.38622215217275385,
-        "macro_f1": 0.3905454865950229,
-        "weighted_f1": 0.6800728318099504
+        "accuracy": 0.7057036665734092,
+        "balanced_accuracy": 0.4425243877048919,
+        "macro_f1": 0.4346130412002171,
+        "weighted_f1": 0.7155039689009707
     },
     "best_multipliers": [
         1.0,
-        0.9500000000000001,
-        1.1428571428571428
+        1.1600000000000001,
+        1.3050000000000002
     ],
-    "total_training_time_seconds": 1373.4016268253326,
-    "num_epochs_trained": 7,
+    "total_training_time_seconds": 10531.417439460754,
+    "num_epochs_trained": 12,
     "batch_size": 4096,
     "optimizer": "AdamW",
     "scheduler": "OneCycleLR",
-    "learning_rate": 0.0008,
-    "weight_decay": 0.0002,
+    "learning_rate": 0.0006,
+    "weight_decay": 0.0001,
     "loss_function": "CrossEntropyLoss with class weights and label smoothing",
     "uses_amp": true,
     "architecture": {
-        "d_model": 64,
-        "n_heads": 4,
-        "n_layers": 3,
-        "ff_dim": 256,
-        "transformer_dropout": 0.15,
+        "d_model": 96,
+        "n_heads": 6,
+        "n_layers": 4,
+        "ff_dim": 384,
+        "transformer_dropout": 0.12,
         "head_hidden_dims": [
-            256,
-            128
+            384,
+            192
         ],
-        "head_dropout": 0.25,
-        "num_numeric_features": 12,
+        "head_dropout": 0.2,
+        "num_numeric_features": 9,
         "num_categorical_features": 8,
         "num_classes": 3,
         "token_strategy": "categorical tokens + numerical tokens + CLS token",
+        "pooling_strategy": "CLS token + mean token pooling",
         "calibration_strategy": "validation-tuned class probability multipliers"
     }
 }

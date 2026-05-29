@@ -1,11 +1,8 @@
 feature,type
 DISTANCE,numerical_scaled
 CRS_DEP_MINUTES_OF_DAY,numerical_scaled
-CRS_ARR_MINUTES_OF_DAY,numerical_scaled
 dep_time_sin,numerical_scaled
 dep_time_cos,numerical_scaled
-arr_time_sin,numerical_scaled
-arr_time_cos,numerical_scaled
 month_sin,numerical_scaled
 month_cos,numerical_scaled
 day_of_week_sin,numerical_scaled

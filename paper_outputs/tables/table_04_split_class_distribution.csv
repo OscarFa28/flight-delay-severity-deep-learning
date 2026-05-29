@@ -1,10 +1,10 @@
 split,delay_class,class_name,count,percentage
-test,0,On time,867712,76.9781
-test,1,Delay,197309,17.504
-test,2,Long delay,62199,5.5179
-train,0,On time,4050886,78.9858
-train,1,Delay,823789,16.0626
-train,2,Long delay,253953,4.9517
-validation,0,On time,483672,80.4016
-validation,1,Delay,95899,15.9415
-validation,2,Long delay,21999,3.6569
+test,0,On time,2453607,79.4504
+test,1,Delay,494801,16.0222
+test,2,Long delay,139816,4.5274
+train,0,On time,11450162,79.4504
+train,1,Delay,2309070,16.0222
+train,2,Long delay,652475,4.5274
+validation,0,On time,2453607,79.4504
+validation,1,Delay,494800,16.0222
+validation,2,Long delay,139816,4.5274

@@ -22,13 +22,13 @@ class TabTransformerModel(nn.Module):
         categorical_cardinalities,
         num_numeric_features,
         num_classes,
-        d_model=64,
-        n_heads=4,
-        n_layers=3,
-        ff_dim=256,
-        transformer_dropout=0.15,
-        head_hidden_dims=[256, 128],
-        head_dropout=0.25
+        d_model=96,
+        n_heads=6,
+        n_layers=4,
+        ff_dim=384,
+        transformer_dropout=0.12,
+        head_hidden_dims=[384, 192],
+        head_dropout=0.20
     ):
         super().__init__()
 
@@ -61,6 +61,8 @@ class TabTransformerModel(nn.Module):
             torch.randn(1, 1, d_model) * 0.02
         )
 
+        self.input_norm = nn.LayerNorm(d_model)
+
         encoder_layer = nn.TransformerEncoderLayer(
             d_model=d_model,
             nhead=n_heads,
@@ -76,7 +78,7 @@ class TabTransformerModel(nn.Module):
             num_layers=n_layers
         )
 
-        head_input_dim = d_model + num_numeric_features
+        head_input_dim = (2 * d_model) + num_numeric_features
 
         head_layers = []
         input_dim = head_input_dim
@@ -118,10 +120,17 @@ class TabTransformerModel(nn.Module):
             dim=1
         )
 
-        encoded_tokens = self.transformer(tokens)
-        cls_output = encoded_tokens[:, 0, :]
+        tokens = self.input_norm(tokens)
 
-        head_input = torch.cat([cls_output, x_num], dim=1)
+        encoded_tokens = self.transformer(tokens)
+
+        cls_output = encoded_tokens[:, 0, :]
+        mean_output = encoded_tokens[:, 1:, :].mean(dim=1)
+
+        head_input = torch.cat(
+            [cls_output, mean_output, x_num],
+            dim=1
+        )
 
         logits = self.head(head_input)
 
@@ -177,13 +186,9 @@ def build_features(input_data):
     features["DISTANCE"] = float(input_data["distance"])
 
     features["CRS_DEP_MINUTES_OF_DAY"] = dep_minutes
-    features["CRS_ARR_MINUTES_OF_DAY"] = arr_minutes
 
     features["dep_time_sin"] = np.sin(2 * np.pi * dep_minutes / 1440)
     features["dep_time_cos"] = np.cos(2 * np.pi * dep_minutes / 1440)
-
-    features["arr_time_sin"] = np.sin(2 * np.pi * arr_minutes / 1440)
-    features["arr_time_cos"] = np.cos(2 * np.pi * arr_minutes / 1440)
 
     features["month_sin"] = np.sin(2 * np.pi * month / 12)
     features["month_cos"] = np.cos(2 * np.pi * month / 12)
@@ -626,7 +631,7 @@ class FlightDelayApp:
 
         self.add_combobox(
             form_frame,
-            label="Arrival time",
+            label="Arrival time block",
             variable=self.arr_time_var,
             values=self.time_options,
             row=5,

@@ -1,4 +1,4 @@
 model,accuracy,macro_f1,weighted_f1,best_val_macro_f1,training_time_minutes
-TabTransformer,0.6939,0.3905,0.6801,0.4015,22.89
-Wide & Deep,0.6977,0.3765,0.6806,0.3963,25.07
-MLP with Embeddings,0.7537,0.3315,0.6856,0.3468,24.67
+TabTransformer,0.7057,0.4346,0.7155,0.4314,175.52
+MLP with Embeddings,0.7162,0.4192,0.7179,0.4202,59.9
+Wide & Deep,0.6539,0.4149,0.6817,0.4156,54.49

@@ -1,12 +1,12 @@
 {
     "model_name": "Wide & Deep Neural Network",
-    "test_loss": 1.0411195801528677,
-    "test_accuracy": 0.6976872305317506,
-    "test_macro_f1": 0.37650709379573505,
-    "test_weighted_f1": 0.680624208490369,
-    "best_val_macro_f1": 0.3963337859425087,
-    "total_training_time_seconds": 1504.2191035747528,
-    "num_epochs": 15,
+    "test_loss": 0.975196366720491,
+    "test_accuracy": 0.6538955723419027,
+    "test_macro_f1": 0.4149294576408713,
+    "test_weighted_f1": 0.68167669297424,
+    "best_val_macro_f1": 0.41560289860449595,
+    "total_training_time_seconds": 3269.170743227005,
+    "num_epochs": 10,
     "batch_size": 4096,
     "optimizer": "AdamW",
     "learning_rate": 0.001,
@@ -15,11 +15,11 @@
     "architecture": {
         "embedding_dims": [
             [
-                15,
-                7
+                16,
+                8
             ],
             [
-                350,
+                363,
                 50
             ],
             [
@@ -27,7 +27,7 @@
                 26
             ],
             [
-                350,
+                363,
                 50
             ],
             [
@@ -35,7 +35,7 @@
                 26
             ],
             [
-                6688,
+                7454,
                 50
             ],
             [
@@ -53,7 +53,7 @@
             96
         ],
         "dropout": 0.25,
-        "num_numeric_features": 12,
+        "num_numeric_features": 9,
         "num_categorical_features": 8,
         "num_classes": 3,
         "wide_path": "Linear layer over numerical features",

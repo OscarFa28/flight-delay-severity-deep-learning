@@ -2,7 +2,7 @@
 Final Results Summary
 
 The best-performing model based on Macro F1-score was TabTransformer.
-It achieved an accuracy of 0.6939, a Macro F1-score of 0.3905, and a Weighted F1-score of 0.6801.
+It achieved an accuracy of 0.7057, a Macro F1-score of 0.4346, and a Weighted F1-score of 0.7155.
 
 Macro F1-score was selected as the main evaluation metric because the dataset presents class imbalance across delay severity classes. Accuracy alone is not sufficient, since a model can achieve high accuracy by favoring the majority class.
 
