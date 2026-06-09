@@ -4,7 +4,7 @@ This repository contains a Deep Learning project for multiclass flight delay sev
 
 The project uses flight records from **2023, 2024, and 2025**, resulting in approximately **21 million raw records**. The final model-ready dataset contains **20,588,160 flights** after cleaning and feature preparation.
 
-The main objective is to predict flight delay severity using only pre-flight or schedule-based information, while avoiding direct data leakage from post-flight delay variables.
+The main objective is to predict flight delay severity using only **pre-flight or schedule-based information**, while avoiding direct data leakage from post-flight delay variables.
 
 ---
 
@@ -20,6 +20,20 @@ Flight delays affect passengers, airlines, airport operations, crew scheduling, 
 
 The original project idea considered a 5-class target, but the very rare long-delay categories created severe class imbalance. The target was redefined into 3 classes to create a more stable and meaningful classification problem.
 
+The final task is intentionally designed as an **early delay-risk estimation problem**. The model does not use real-time information such as weather, airport congestion, maintenance events, or aircraft rotation. Instead, it uses stable information that is usually known before the flight date, such as carrier, route, origin, destination, distance, scheduled departure time, month, and day of week.
+
+---
+
+## Approach Rationale
+
+Many flight delay prediction systems include external operational data, especially weather. This can improve predictive performance because weather is one of the strongest causes of flight disruptions. However, this project follows a different approach.
+
+The goal is to estimate delay risk using only information that is known in advance. This is relevant because passengers often buy flights weeks or months before traveling. At that moment, exact weather conditions, airport congestion, maintenance issues, air traffic control restrictions, and aircraft rotation status are not available. Some of those variables would require their own forecasting models.
+
+For that reason, this project focuses on fixed or schedule-based features. The model is not intended to replace real-time airline operations systems. Instead, it is designed to provide an early probability estimate that can help compare flight options, evaluate short connection risks, and understand historical delay patterns associated with specific routes, carriers, months, and schedules.
+
+This design makes the problem harder, especially for the `Long delay` class, but it also makes the experiment different from approaches that rely heavily on external or near-real-time data.
+
 ---
 
 ## Dataset
@@ -27,13 +41,44 @@ The original project idea considered a 5-class target, but the very rare long-de
 The dataset comes from the **U.S. Bureau of Transportation Statistics (BTS) TranStats Airline On-Time Performance Data**.
 
 Dataset source:
+
 https://transtats.bts.gov/DatabaseInfo.asp?QO_VQ=EFD&DB_URL=
 
-Although BTS provides records from 1987 to 2025, this project uses only the years **2023, 2024, and 2025** because they provide recent operational patterns and enough data for large-scale Deep Learning experiments.
+Although BTS provides records from 1987 to 2025, this project uses only the years **2023, 2024, and 2025**.
+
+This range was selected for three main reasons:
+
+1. **Dataset size**: approximately 21 million raw records were already enough for large-scale Deep Learning experiments.
+2. **COVID-19 abnormality**: including 2020, 2021, or part of 2022 could introduce unusual aviation patterns caused by the COVID-19 period.
+3. **Current relevance**: very old records may represent airline reliability, airport operations, route availability, and operational behavior that are less aligned with current aviation conditions.
 
 The raw input consists of **36 monthly CSV files**.
 
-### Dataset Size
+---
+
+## Dataset Availability
+
+The original dataset is **not included in this repository** because of its size. The complete raw dataset contains approximately 21 million records across 36 monthly files, which is too large for a regular GitHub repository.
+
+To reproduce the project, download the monthly CSV files from BTS TranStats and place them inside:
+
+```text
+data/raw/
+```
+
+Expected data range:
+
+```text
+2023: January to December
+2024: January to December
+2025: January to December
+```
+
+After placing the files in `data/raw/`, run the notebooks in order. The preprocessing notebooks will regenerate the Parquet files, processed NumPy datasets, encoders, scalers, and model-ready artifacts.
+
+---
+
+## Dataset Size
 
 | Dataset Version     |    Records |
 | ------------------- | ---------: |
@@ -56,6 +101,8 @@ The project uses a **stratified random split**:
 | Test       |        15% |
 
 The split is stratified by the target class to preserve class proportions across all subsets. This is important because the dataset is imbalanced and most flights belong to the `On time` class.
+
+Since the dataset includes three complete years of records, the stratified split also helps represent different seasons and operational periods across training, validation, and test sets.
 
 ---
 
@@ -85,7 +132,31 @@ The model uses only pre-flight or schedule-based information to avoid data leaka
 
 Categorical variables are encoded as integer IDs and passed through embedding layers. Numerical variables are standardized using `StandardScaler`.
 
-Post-flight variables such as actual arrival delay, actual departure delay, delay causes, taxi time, and air time are excluded from the model features.
+Post-flight variables such as actual arrival delay, actual departure delay, delay causes, taxi time, air time, and actual arrival/departure values are excluded from the model features.
+
+---
+
+## Leakage Prevention
+
+A strict leakage prevention strategy is used. The model does not use variables that directly reveal the final delay or variables that would only be known after the flight happened.
+
+Excluded variables include:
+
+* Actual departure time
+* Actual arrival time
+* Departure delay
+* Arrival delay
+* Delay cause columns
+* Taxi time
+* Air time
+* Carrier delay
+* Weather delay
+* NAS delay
+* Security delay
+* Late aircraft delay
+* Cancellation information
+
+This makes the task more difficult but also more realistic for early prediction.
 
 ---
 
@@ -163,6 +234,8 @@ Because the dataset is imbalanced, **Macro F1-score** is the main evaluation met
 
 The **raw TabTransformer** achieved the highest accuracy and weighted F1-score. However, the **calibrated TabTransformer** achieved the best Macro F1-score and balanced accuracy, so it was selected as the final model.
 
+Calibration improved the model's balance across classes, especially for delayed flights. This is important because `Long delay` is the hardest class and the most affected by missing external factors.
+
 ---
 
 ## Training Hardware
@@ -234,6 +307,8 @@ All experiments were trained on:
 └── requirements.txt
 ```
 
+Large generated files may not be included in the repository. They can be regenerated by running the notebooks after downloading the original BTS CSV files.
+
 ---
 
 ## Notebooks
@@ -289,6 +364,8 @@ Run the GUI with:
 python src/predict_flight_delay_gui.py
 ```
 
+The GUI requires the trained model checkpoint and processed files generated by the notebooks.
+
 ---
 
 ## Installation
@@ -320,20 +397,43 @@ pip install -r requirements.txt
 If a `requirements.txt` file is not available, install the main dependencies manually:
 
 ```bash
-pip install numpy pandas polars scikit-learn matplotlib seaborn tqdm pyarrow joblib torch
+pip install numpy pandas polars pyarrow scikit-learn scipy matplotlib seaborn tqdm joblib torch ipykernel notebook
 ```
 
 ---
 
-## How to Run the Project
+## How to Reproduce the Project
 
-1. Place the monthly BTS CSV files inside:
+1. Clone the repository:
+
+```bash
+git clone https://github.com/OscarFa28/flight-delay-severity-deep-learning.git
+cd flight-delay-severity-deep-learning
+```
+
+2. Create and activate the virtual environment.
+
+3. Install the dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+4. Download the BTS TranStats Airline On-Time Performance monthly CSV files for:
+
+```text
+2023 January-December
+2024 January-December
+2025 January-December
+```
+
+5. Place all 36 CSV files inside:
 
 ```text
 data/raw/
 ```
 
-2. Run the notebooks in order:
+6. Run the notebooks in order:
 
 ```text
 01_data_preparation_eda.ipynb
@@ -344,7 +444,7 @@ data/raw/
 06_results_analysis.ipynb
 ```
 
-3. After training the models, run the GUI:
+7. After training the models, run the GUI:
 
 ```bash
 python src/predict_flight_delay_gui.py
@@ -354,7 +454,7 @@ python src/predict_flight_delay_gui.py
 
 ## Important Notes
 
-Large files such as raw CSVs, generated Parquet files, `.npz` processed datasets, and trained model checkpoints may be excluded from the repository depending on storage limits.
+Large files such as raw CSVs, generated Parquet files, `.npz` processed datasets, and trained model checkpoints may be excluded from the repository due to storage limits.
 
 Recommended files to exclude from Git:
 
@@ -366,7 +466,7 @@ models/*.pt
 *.parquet
 ```
 
-However, the notebooks and source code are designed to regenerate these artifacts if the original BTS CSV files are available.
+The repository is still reproducible because all generated artifacts can be recreated from the original BTS CSV files by running the notebooks in order.
 
 ---
 
@@ -384,19 +484,50 @@ The model only uses schedule-based and pre-flight information. It does not inclu
 
 These missing factors likely limit the prediction of the `Long delay` class. Therefore, the model should be interpreted as an early delay-risk estimator, not as a complete operational prediction system.
 
+The results should be understood under this constraint. The model is not expected to predict every severe disruption because many severe disruptions are caused by events that are not visible from schedule-based information alone.
+
+---
+
+## Interpretability
+
+The final model is based on a Transformer-style architecture. For tabular Transformers, attention-based analysis can be used as an interpretability tool.
+
+A full attention-map visualization was not included in the final GUI. However, future work could extract attention weights from the Transformer Encoder to study which feature tokens influence delay predictions the most, such as route, carrier, time block, month, day of week, or distance.
+
+Grad-CAM is not directly applicable to this project because the final model is not a convolutional neural network for image data. For this type of model, attention maps are a more appropriate interpretability direction.
+
 ---
 
 ## Future Work
 
-Possible future improvements include:
+Future work can extend the project in two directions.
 
-* Adding weather data
-* Adding airport congestion indicators
-* Including aircraft rotation and previous flight information
-* Comparing against gradient boosting models
-* Testing cost-sensitive thresholds
-* Deploying the model as a web dashboard
-* Improving the graphical inference interface
+### 1. Keeping the early-prediction approach
+
+This direction preserves the original idea of using only stable information known before the flight date. Possible improvements include:
+
+* Testing additional tabular architectures.
+* Comparing against gradient boosting baselines such as XGBoost, LightGBM, or CatBoost.
+* Running repeated experiments with different random seeds.
+* Adding confidence intervals for the reported metrics.
+* Performing feature ablation studies.
+* Extracting attention maps from the TabTransformer.
+* Testing cost-sensitive thresholds for missed long delays.
+* Improving the GUI and exporting predictions to a report or dashboard.
+
+### 2. Building an operational real-time version
+
+This direction would no longer be a pure early-prediction model, but it could improve accuracy by including dynamic operational data such as:
+
+* Weather forecasts or observed weather.
+* Airport congestion indicators.
+* Aircraft rotation information.
+* Previous flight delay.
+* Maintenance events.
+* Air traffic control restrictions.
+* Real-time disruption signals.
+
+This second direction would likely improve `Long delay` prediction, but it would also require more data sources and would depend on information that may not be available far in advance.
 
 ---
 

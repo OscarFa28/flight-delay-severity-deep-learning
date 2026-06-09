@@ -38,6 +38,21 @@ runs/
 build/
 dist/
 
-# Ignore ALL contents inside data folder
-data/
 
+data/raw/*
+data/generated/*
+
+!data/
+!data/raw/
+!data/generated/
+!data/raw/.gitkeep
+!data/generated/.gitkeep
+
+*.npz
+*.parquet
+*.pkl
+
+
+models/*.pt
+models/*.pth
+models/*.ckpt
