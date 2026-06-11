@@ -26,7 +26,6 @@ venv/
 Thumbs.db
 
 # Model checkpoints
-*.pt
 *.pth
 *.h5
 *.ckpt
