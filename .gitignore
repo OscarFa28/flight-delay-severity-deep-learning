@@ -52,7 +52,3 @@ data/generated/*
 *.parquet
 *.pkl
 
-
-models/*.pt
-models/*.pth
-models/*.ckpt
